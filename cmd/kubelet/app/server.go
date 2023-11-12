@@ -164,8 +164,8 @@ is checked every 20 seconds (also configurable with a flag).`,
 		// so we do all our parsing manually in Run, below.
 		// DisableFlagParsing=true provides the full set of flags passed to the kubelet in the
 		// `args` arg to Run, without Cobra's interference.
-		DisableFlagParsing: true,
-		SilenceUsage:       true,
+		DisableFlagParsing: false,
+		SilenceUsage:       false,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			// initial flag parse, since we disable cobra's flag parsing
 			if err := cleanFlagSet.Parse(args); err != nil {
